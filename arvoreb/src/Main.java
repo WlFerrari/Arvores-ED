@@ -24,4 +24,12 @@ public class Main {
         }
         return 1 + contarNos(node.esquerda) + contarNos(node.direita);
     }
+
+    public static void preOrdem(No no) {
+        if (no != null) {
+            System.out.println(no.item + " ");
+            preOrdem(no.esquerda);
+            preOrdem(no.direita);
+        }
+    }
 }
