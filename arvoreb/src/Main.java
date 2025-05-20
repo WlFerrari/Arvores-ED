@@ -32,4 +32,12 @@ public class Main {
             preOrdem(no.direita);
         }
     }
+
+    public static void emOrdem(No no) {
+        if (no != null) {
+            emOrdem(no.esquerda);
+            System.out.println(no.item + " ");
+            emOrdem(no.direita);
+        }
+    }
 }
