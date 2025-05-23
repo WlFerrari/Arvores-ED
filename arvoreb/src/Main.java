@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -40,4 +45,26 @@ public class Main {
             emOrdem(no.direita);
         }
     }
+
+    public static void emNivel(No raiz) {
+        if (raiz == null) {
+            return;
+        }
+
+        Queue<No> fila = new LinkedList<>();
+        fila.add(raiz);
+
+        while (!fila.isEmpty()) {
+            No atual = fila.poll();
+            System.out.println(atual.item + " ");
+
+            if (atual.esquerda != null) {
+                fila.add(atual.esquerda);
+            }
+            if (atual.direita != null) {
+                fila.add(atual.direita);
+            }
+        }
+    }
+
 }
